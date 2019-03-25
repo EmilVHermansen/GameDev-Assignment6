@@ -13,6 +13,7 @@ public class levelGen : MonoBehaviour {
     public Tilemap tilemap;
     public TileBase grass;
     public TileBase dirt;
+    public GameObject player;
 
 
 
@@ -21,7 +22,8 @@ public class levelGen : MonoBehaviour {
     void Start () {
         int[,] map = GenerateArray(widthGen, heightGen);
         RenderMap(map, tilemap, grass, dirt);
-	}
+        Instantiate(player, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -36,9 +38,9 @@ public class levelGen : MonoBehaviour {
         {
             for (int y = 0; y < map.GetUpperBound(1); y++)
             {
-                int number = Random.Range(0, 1);
+                int number = Random.Range(0, 2);
                 print(number);
-                if (number == 0)
+                if (number > 0)
                 {
                     map[x, y] = 1;
                 }
