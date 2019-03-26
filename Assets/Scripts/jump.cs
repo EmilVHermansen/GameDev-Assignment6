@@ -21,7 +21,8 @@ public class jump : MonoBehaviour
         if (other.gameObject.tag == "obstacle")
         {
             Destroy(gameObject);
-            Time.timeScale = 0;
+            Instantiate(gameObject, new Vector3(-11f, 0.2f, -10f), Quaternion.identity);
+            gameObject.AddComponent<Rigidbody2D>();
         }
 
 

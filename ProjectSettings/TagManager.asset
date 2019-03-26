@@ -7,6 +7,8 @@ TagManager:
   - obstacle
   - ground
   - roof
+  - Coin
+  - points
   layers:
   - Default
   - TransparentFX
