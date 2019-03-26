@@ -5,15 +5,13 @@ using UnityEngine.Tilemaps;
 
 public class levelGen : MonoBehaviour {
 
-    public GameObject defaultTile; // tile to be generated
     public int widthGen; // how many tiles to generate
     public int heightGen;
-    public float widthMultiplier; // distance between tiles
-    public float heightMultiplier;
     public Tilemap tilemap;
     public TileBase grass;
     public TileBase dirt;
     public GameObject player;
+    public GameObject coin;
 
 
 
@@ -21,7 +19,7 @@ public class levelGen : MonoBehaviour {
     // Use this for initialization
     void Start () {
         int[,] map = GenerateArray(widthGen, heightGen);
-        RenderMap(map, tilemap, grass, dirt);
+        RenderMap(map, tilemap, grass, dirt, coin);
         Instantiate(player, new Vector2(transform.position.x, transform.position.y), Quaternion.identity);
     }
 	
@@ -38,22 +36,20 @@ public class levelGen : MonoBehaviour {
         {
             for (int y = 0; y < map.GetUpperBound(1); y++)
             {
-                int number = Random.Range(0, 2);
-                print(number);
-                if (number > 0)
+                if (Random.Range(0, 4) == 0)
                 {
-                    map[x, y] = 1;
+                    map[x, y] = 0;
                 }
                 else
                 {
-                    map[x, y] = 0;
+                    map[x, y] = 1;
                 }
             }
         }
         return map;
     }
 
-    public static void RenderMap(int[,] map, Tilemap tilemap, TileBase grass, TileBase dirt)
+    public static void RenderMap(int[,] map, Tilemap tilemap, TileBase grass, TileBase dirt, GameObject coin)
     {
         //Clear the map (ensures we dont overlap)
         tilemap.ClearAllTiles();
@@ -64,13 +60,17 @@ public class levelGen : MonoBehaviour {
             for (int y = 0; y < map.GetUpperBound(1); y++)
             {
                 // 1 = tile, 0 = no tile
-                if (map[x, y] == 1)
-                {
-                    tilemap.SetTile(new Vector3Int(x, y, 0), grass);
-                }
-                else if(map[x, y] == 0)
+                if (map[x, y] == 0)
                 {
                     tilemap.SetTile(new Vector3Int(x, y, 0), dirt);
+                }
+                if(map[x, y] == 1)
+                {
+                    tilemap.SetTile(new Vector3Int(x, y, 0), grass);
+                    if(Random.Range(0,3) == 0)
+                    {
+                        Instantiate(coin, new Vector3(x+0.5f, y+0.5f, 0), Quaternion.identity);
+                    }
                 }
             }
         }

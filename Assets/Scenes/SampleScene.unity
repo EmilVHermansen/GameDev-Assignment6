@@ -164,7 +164,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7.5617294
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -267,13 +267,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26714202a6256e34cbffe43dcf99d8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultTile: {fileID: 0}
   widthGen: 50
   heightGen: 50
-  widthMultiplier: 1
-  heightMultiplier: 1
   tilemap: {fileID: 1590806206}
-  tile: {fileID: 0}
+  grass: {fileID: 11400000, guid: 1ea967c7ba70ebd469a06e35a1538b8e, type: 2}
+  dirt: {fileID: 11400000, guid: dbbe5353c21c2bd4998a8a7e298bf055, type: 2}
+  player: {fileID: 273435577636871689, guid: 5777833a820b3f043907b81f946a01b9, type: 3}
+  coin: {fileID: 6833351145530183550, guid: d7119f5c4813df24885a76eb278ac662, type: 3}
 --- !u!4 &788042903
 Transform:
   m_ObjectHideFlags: 0
@@ -377,8 +377,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2003021373
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
