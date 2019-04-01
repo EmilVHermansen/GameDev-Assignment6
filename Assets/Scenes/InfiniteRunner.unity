@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08295eb4a0f326c4db8da2e330235c17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 871357053201770074, guid: ca3207a2fcf1ba348b747ba692f71d98, type: 3}
+  player: {fileID: 2756327188963323759, guid: ad61d92c889e60f48a8c66edeb39623b, type: 3}
   obstacleSquare: {fileID: 897444835676542968, guid: 6b4f7fb3f5688fb47be936e368d0cbee,
     type: 3}
   obstacleFly: {fileID: 3618358486648505108, guid: 4c9289512e89a294e83fe0c64e8ca8a3,
@@ -357,14 +357,14 @@ RectTransform:
   m_GameObject: {fileID: 287364880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.27781248, y: 0.4625, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.83, y: 10.91}
+  m_AnchoredPosition: {x: -9.27, y: 10.04}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &336275172
@@ -419,7 +419,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 7.0192704
+  orthographic size: 5.79975
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -443,7 +443,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 336275172}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.85, z: -14.6}
+  m_LocalPosition: {x: -0.29, y: 5.36, z: -14.6}
   m_LocalScale: {x: 1, y: 0.88748, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -522,8 +522,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340147492}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.054, y: 3.244, z: 0}
-  m_LocalScale: {x: 4.780233, y: 6.8989472, z: 1}
+  m_LocalPosition: {x: -0.3, y: 7.24, z: 0}
+  m_LocalScale: {x: 4.7276506, y: 5.498461, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
