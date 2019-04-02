@@ -11,10 +11,8 @@ public class jump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0)
+        if (Input.GetMouseButtonDown(0) || Input.touchCount != 0)
         {
-            Touch touch = Input.GetTouch(0);
-
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
         }
     }
