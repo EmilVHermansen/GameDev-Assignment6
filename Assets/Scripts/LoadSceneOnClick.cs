@@ -8,10 +8,14 @@ using UnityEngine.SceneManagement;
 public class LoadSceneOnClick : MonoBehaviour
 {
     public Button playGame;
+    public Button exitGame;
+
     // Start is called before the first frame update
     void Start()
     {
         playGame.onClick.AddListener(LoadScene);
+        exitGame.onClick.AddListener(ExitGame);
+
     }
 
     // Update is called once per frame
@@ -23,5 +27,10 @@ public class LoadSceneOnClick : MonoBehaviour
     public void LoadScene()
     {
         SceneManager.LoadScene("InfiniteRunner");
+    }
+
+    void ExitGame()
+    {
+        Application.Quit();
     }
 }
