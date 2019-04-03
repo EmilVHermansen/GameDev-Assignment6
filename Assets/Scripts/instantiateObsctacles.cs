@@ -7,11 +7,13 @@ public class instantiateObsctacles : MonoBehaviour
     public GameObject player;
     public GameObject obstacleSquare;
     public GameObject obstacleFly;
+    private bool playing = false;
 
     // Start is called before the first frame update
     void Start()
     {
         Instantiate(player, new Vector3(-11f, 0.2f, -10f), Quaternion.identity);
+        playing = true;
         StartCoroutine(Wave());
 
     }
@@ -25,19 +27,20 @@ public class instantiateObsctacles : MonoBehaviour
     IEnumerator Wave()
     {
         yield return new WaitForSeconds(1f);
-        for (int i = 0; i < 100; i++)
+        while(playing)
         {
 
             yield return new WaitForSeconds(2f);
             int number = Random.Range(0, 2);
+            float speed = Random.Range(0.2f, 0.6f);
             print(number);
             if (number > 0)
             {
-                Instantiate(obstacleSquare, new Vector2(11f, 0.2f), Quaternion.identity);
+                Instantiate(obstacleSquare, new Vector2(11f, speed), Quaternion.identity);
             }
             else
             {
-                Instantiate(obstacleFly, new Vector2(11f, 0.4f), Quaternion.identity);
+                Instantiate(obstacleFly, new Vector2(11f, speed), Quaternion.identity);
             }
             yield return null;
         }
